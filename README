@@ -1,0 +1,62 @@
+================================================================================
+=================================== Tema 1 PP ==================================
+============================== Costea Mihai 322CB ==============================
+================================================================================
+
+La ambele task-uri am creat liste de adiacenta pentru fiecare nod folosindu-ma
+de functii de nivel superior si stocandu-le intr-un Array.
+
+functia get_cost are ca output lungimea drumului intre 2 noduri.
+
+================================================================================
+================================================================================
+
+Task-1:
+
+La primul task am implementat bellman.
+bellman da distanta minima intre un nod fixat si toate celelalte noduri dintr-un
+graf. Din cauza laziness-ului haskell-ului nu vaparcurge toate drumurile posibile
+ci doar subgraf-ul conex in care se afla nodul 1. 
+Bellman functioneaza limitand accesul la noduri. El spune ca un drum minim poate
+fi identificat prin compararea unui drum minim gasit anterior cu o restrictie de
+-1 sau mai multe muchii posibil traversabile sau mergand la vecinii acestui nod
+si folosind acelas algoritm recursiv. Cand te duci la un nod vecind se scade 1
+din numarul maxim de muchii posibil traversabile s aduni lungimea muchiei la
+drumul total.
+
+================================================================================
+================================================================================
+
+Task-2: 
+
+Am modificat bellman ca sa poata sa accepte si costuri pe muchii.
+
+functia get_cost_oras da costul de intrare intr-un oras
+
+functia get_length da lungimea dintre 2 noduri.
+
+Ideea pe care am mers cand am creat recurenta a fost aceasi cu cea de la task-ul
+1, numai ca acum mai am un parametru si anume banii pe care ii am la dispozitie.
+De fieccare data cand merg pe un nod adiacent voi scadea din numarul maxim de
+bani pe care ii pot consuma corespunzator cu taxa de intrare in acel oras. Iar
+fiecare celula din matrice tine minte care este cel mai scurt drum pe care poti
+sa il forrmezi folosind banii aceia sau mai putin. Fiind o recurenta definitia
+este recursiva.
+
+================================================================================
+================================================================================
+
+La ambele task-uri functia de parcurgere parcurge matricea creata pentru a obtine
+drumul minim respectiv numarul de bani pe care il mai ai la dispozitie cand 
+te deplasezi prin graf.
+
+================================================================================
+================================================================================
+
+Chiar si cu programare dinamica lenesa cu tot din cauza inputului destul de 
+maricel pentru ultimele teste de stress va dura cateva minute. Pe laptop-ul meu
+dureaza aprox 2 min si 50 de secunde o rulare integrala a temei adica o rulare a
+checker-ului cu parametrul both.
+
+================================================================================
+================================================================================
